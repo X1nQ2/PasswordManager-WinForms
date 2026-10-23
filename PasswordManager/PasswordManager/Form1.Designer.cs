@@ -33,7 +33,6 @@
             this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВыбраннуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvPasswords = new System.Windows.Forms.DataGridView();
             this.passwordManagerDBDataSet = new PasswordManager.PasswordManagerDBDataSet();
             this.passwordManagerDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -42,13 +41,25 @@
             this.passwordsTableAdapter = new PasswordManager.PasswordManagerDBDataSetTableAdapters.PasswordsTableAdapter();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new PasswordManager.PasswordManagerDBDataSetTableAdapters.UsersTableAdapter();
+            this.passwordsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvPasswords = new System.Windows.Forms.DataGridView();
+            this.passwordsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.passwordsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uRLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encryptedPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordManagerDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordManagerDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -83,14 +94,6 @@
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
-            // 
-            // dgvPasswords
-            // 
-            this.dgvPasswords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPasswords.Location = new System.Drawing.Point(0, 27);
-            this.dgvPasswords.Name = "dgvPasswords";
-            this.dgvPasswords.Size = new System.Drawing.Size(800, 425);
-            this.dgvPasswords.TabIndex = 1;
             // 
             // passwordManagerDBDataSet
             // 
@@ -129,6 +132,80 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // passwordsBindingSource1
+            // 
+            this.passwordsBindingSource1.DataMember = "Passwords";
+            this.passwordsBindingSource1.DataSource = this.passwordManagerDBDataSet;
+            // 
+            // dgvPasswords
+            // 
+            this.dgvPasswords.AllowUserToOrderColumns = true;
+            this.dgvPasswords.AutoGenerateColumns = false;
+            this.dgvPasswords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPasswords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.passwordsIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.uRLDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.encryptedPasswordDataGridViewTextBoxColumn,
+            this.categoryIDDataGridViewTextBoxColumn,
+            this.userIDDataGridViewTextBoxColumn});
+            this.dgvPasswords.DataSource = this.passwordsBindingSource2;
+            this.dgvPasswords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPasswords.Location = new System.Drawing.Point(0, 24);
+            this.dgvPasswords.Name = "dgvPasswords";
+            this.dgvPasswords.Size = new System.Drawing.Size(800, 426);
+            this.dgvPasswords.TabIndex = 1;
+            // 
+            // passwordsBindingSource2
+            // 
+            this.passwordsBindingSource2.DataMember = "Passwords";
+            this.passwordsBindingSource2.DataSource = this.passwordManagerDBDataSet;
+            // 
+            // passwordsIDDataGridViewTextBoxColumn
+            // 
+            this.passwordsIDDataGridViewTextBoxColumn.DataPropertyName = "Passwords_ID";
+            this.passwordsIDDataGridViewTextBoxColumn.HeaderText = "Passwords_ID";
+            this.passwordsIDDataGridViewTextBoxColumn.Name = "passwordsIDDataGridViewTextBoxColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // uRLDataGridViewTextBoxColumn
+            // 
+            this.uRLDataGridViewTextBoxColumn.DataPropertyName = "URL";
+            this.uRLDataGridViewTextBoxColumn.HeaderText = "URL";
+            this.uRLDataGridViewTextBoxColumn.Name = "uRLDataGridViewTextBoxColumn";
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            // 
+            // encryptedPasswordDataGridViewTextBoxColumn
+            // 
+            this.encryptedPasswordDataGridViewTextBoxColumn.DataPropertyName = "EncryptedPassword";
+            this.encryptedPasswordDataGridViewTextBoxColumn.HeaderText = "EncryptedPassword";
+            this.encryptedPasswordDataGridViewTextBoxColumn.Name = "encryptedPasswordDataGridViewTextBoxColumn";
+            // 
+            // categoryIDDataGridViewTextBoxColumn
+            // 
+            this.categoryIDDataGridViewTextBoxColumn.DataPropertyName = "Category_ID";
+            this.categoryIDDataGridViewTextBoxColumn.HeaderText = "Category_ID";
+            this.categoryIDDataGridViewTextBoxColumn.Name = "categoryIDDataGridViewTextBoxColumn";
+            this.categoryIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            this.userIDDataGridViewTextBoxColumn.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,12 +218,14 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordManagerDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordManagerDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPasswords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +245,16 @@
         private PasswordManagerDBDataSetTableAdapters.PasswordsTableAdapter passwordsTableAdapter;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private PasswordManagerDBDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.BindingSource passwordsBindingSource1;
         private System.Windows.Forms.DataGridView dgvPasswords;
+        private System.Windows.Forms.BindingSource passwordsBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordsIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uRLDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn encryptedPasswordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
     }
 }
 
