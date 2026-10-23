@@ -155,9 +155,11 @@ namespace PasswordManager
             }
 
             // Если нашли строку и в ней есть ID для удаления
-            if (rowIndex >= 0 && dgvPasswords.Rows[rowIndex].Cells["Passwords_ID"].Value != null)
+            if (rowIndex >= 0 && dgvPasswords.Rows[rowIndex].Cells[0].Value != null)
             {
-                int idToDelete = Convert.ToInt32(dgvPasswords.Rows[rowIndex].Cells["Passwords_ID"].Value);
+                int idToDelete = Convert.ToInt32(dgvPasswords.Rows[rowIndex].Cells[0].Value);
+
+
 
                 // Спрашиваем подтверждение перед удалением (для красивой защиты проекта)
                 DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить эту запись из базы Access?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
